@@ -25,10 +25,10 @@ void setup() {
 void loop() {
   if (!digitalRead(10)){
     digitalWrite(led, HIGH);
-    Serial.print(1);
+    if (Serial.available() == 0) Serial.write(1);
   } else
   {
     digitalWrite(led, LOW);
-    Serial.print(0);
+    Serial.write(0);
   }
 }
