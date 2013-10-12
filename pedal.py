@@ -11,7 +11,7 @@ def keypress(sequence):
     p = Popen(['xte'], stdin=PIPE)
     p.communicate(input=sequence)
 
-ser = serial.Serial('/dev/ttyACM1', 19200, timeout=1)
+ser = serial.Serial('/dev/ttyACM0', 19200, timeout=1)
 while True:
 	ser.flushInput()
 	inp = ser.read(1)
